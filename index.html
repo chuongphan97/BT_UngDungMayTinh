@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ứng dụng máy tính</title>
+    <style>
+        table{display: flex;
+        flex-direction: column;
+            
+        }
+        td{
+            width:60px;
+            background: #f1f3f4;
+    color: #202124;
+    border: 3px solid #00000;
+    border-radius: 4px;
+        }
+        button{
+            width: 100%;
+            background: #f1f3f4;
+    color: #202124;
+    border: 3px solid #f1f3f4;
+    border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+        <input type="text" name="board" id="board" style="width: 250px; padding-bottom: 30px;" > <br>
+
+       <table>
+           <thead></thead>
+           <tbody>
+               <tr>
+                   <td><button name="open" value="(" onclick="doWrite(this.value)">(</button></td>
+                   <td><button name="close" value=")" onclick="doWrite(this.value)">)</button></td>
+                   <td><button name="name" id="percent" value="*0.01" onclick="doWrite(this.value)">%</button></td>
+                   <td><button name="del" value="del" onclick="doDel(this.value)">AC</button></td>
+               </tr>
+               <tr>
+                   <td><button name="7" value="7" onclick="doWrite(this.value)">7</button></td>
+                   <td><button name="8" value="8" onclick="doWrite(this.value)">8</button></td>
+                   <td><button name="9" value="9" onclick="doWrite(this.value)">9</button></td>
+                   <td><button name="devide" value="/" onclick="doWrite(this.value)">/</button> </td>
+               </tr>
+               <tr>
+                    <td><button name="4" value="4" onclick="doWrite(this.value)">4</button></td>
+                    <td><button name="5" value="5" onclick="doWrite(this.value)">5</button></td>
+                    <td><button name="6" value="6" onclick="doWrite(this.value)">6</button></td>
+                    <td><button name="multi" value="*" onclick="doWrite(this.value)">*</button></td>
+               </tr>
+               <tr>
+                   <td><button name="1" value="1" onclick="doWrite(this.value)">1</button></td>
+                   <td><button name="2" value="2" onclick="doWrite(this.value)">2</button></td>
+                    <td><button name="3" value="3" onclick="doWrite(this.value)">3</button></td>
+                    <td><button name="subtract" value="-" onclick="doWrite(this.value)">-</button></td>
+               </tr>
+               <tr>
+                   <td><button name="0" value="0" onclick="doWrite(this.value)">0</button></td>
+                   <td><button name="." value="." onclick="doWrite(this.value)">.</button></td>
+                    <td><button name="=" value="=" onclick="doMath()">=</button></td>
+                    <td><button name="+" value="+" onclick="doWrite(this.value)">+</button></td>
+               </tr>
+           </tbody>
+       </table>
+        
+        
+        
+        
+    <script>
+        let s = 0;
+        function doDel(){
+            document.getElementById('board').value = null;
+        }
+        function doWrite(value){
+            console.log(value);
+            document.getElementById('board').value += value;
+            
+            }
+        function doMath(){
+                               
+                        s = eval(document.getElementById('board').value);
+            document.getElementById('board').value = s;
+        }
+    </script>
+</body>
+</html>
